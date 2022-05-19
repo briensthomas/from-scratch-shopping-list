@@ -24,7 +24,7 @@ addItemForm.addEventListener('submit', async (e) => {
 console.log(addItemForm);
 // // The way Julie did it
 // addItemForm.addEventListener('submit', async (e) => {
-//     e.preventDefault;
+//     e.preventDefault();
 //     const itemData = new FormData(addItemForm);
 //     console.log(itemData.get('item-name'));
 //     console.log(itemData.get('item-quantity'));

@@ -37,8 +37,8 @@ export async function logout() {
     return (window.location.href = '../');
 }
 
-export async function addNewItem(name, quantity) {
-    const response = await client.from('Shopping_List').insert({ name, quantity });
+export async function addNewItem(item) {
+    const response = await client.from('Shopping_List').insert(item);
     if (response.data) {
         return response.data;
     } else {
@@ -51,6 +51,19 @@ export async function fetchShoppingList() {
 
     if (response.error) {
         console.error(response.error.message);
+    } else {
+        return response.data;
+    }
+}
+
+export async function togglePurchased(item) {
+    console.log(item);
+    const response = await client.from('Shopping_List')
+        .update({ purchased: !item.purchased })
+        .match({ id: item.id });
+
+    if (response.error) {
+        console.error(response.error);
     } else {
         return response.data;
     }
