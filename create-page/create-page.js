@@ -1,9 +1,10 @@
 import { checkAuth, logout, addNewItem } from '../fetch-utils.js';
 
-checkAuth();
 
 const addItemForm = document.getElementById('add-item-form');
 const logoutButton = document.getElementById('logout');
+
+checkAuth();
 
 logoutButton.addEventListener('click', () => {
     logout();

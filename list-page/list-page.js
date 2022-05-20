@@ -1,9 +1,16 @@
-import { checkAuth, togglePurchased, fetchShoppingList } from '../fetch-utils.js';
+import { checkAuth, togglePurchased, fetchShoppingList, deleteList, logout } from '../fetch-utils.js';
 import { renderList } from '../render-utils.js';
 
+const logoutButton = document.getElementById('logout');
 const shoppingListEl = document.getElementById('shopping-list');
+const deleteButton = document.getElementById('delete-button');
+
 
 checkAuth();
+
+logoutButton.addEventListener('click', () => {
+    logout();
+});
 
 async function displayShoppingList() {
     shoppingListEl.textContent = '';
@@ -23,3 +30,9 @@ async function displayShoppingList() {
 }
 
 displayShoppingList();
+
+deleteButton.addEventListener('click', async (e) => {
+    e.preventDefault();
+    await deleteList();
+    displayShoppingList();
+});

@@ -69,6 +69,18 @@ export async function togglePurchased(item) {
     }
 }
 
+export async function deleteList() {
+    const response = await client.from('Shopping_List')
+        .delete()
+        .match({ user_id: getUser().id });
+
+    if (response.error) {
+        console.error(response.error);
+    } else {
+        return response.data;
+    }
+}
+
 // function checkError({ data, error }) {
 //     return error ? console.error(error) : data;
 // }

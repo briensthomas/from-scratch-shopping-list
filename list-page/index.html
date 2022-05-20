@@ -5,16 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <link rel="stylesheet" href="list-page.css">
     <title>Shopping List</title>
 </head>
 <body>
-    <h1>Shopping List</h1>
+    <header>
+        <div class="title-header">
+            <h1 id="title">Shopping List</h1>
+        </div>
+        <div class="logout-header">
+            <button id="logout"> Logout</button>
+        </div>
+    </header>
+    <div>
+        <a href="../create-page"><button>Add Item</button></a>
+    </div>
     <div>
         <ul id="shopping-list">
         </ul>
     </div>
     <div>
-        <a href="../create-page"><button>Add Item</button></a>
+        <button id="delete-button">Delete List</button>
     </div>
     
     <script type="module" src="./list-page.js"></script>
