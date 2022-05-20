@@ -57,7 +57,6 @@ export async function fetchShoppingList() {
 }
 
 export async function togglePurchased(item) {
-    console.log(item);
     const response = await client.from('Shopping_List')
         .update({ purchased: !item.purchased })
         .match({ id: item.id });
