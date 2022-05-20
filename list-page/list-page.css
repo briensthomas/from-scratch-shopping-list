@@ -43,19 +43,19 @@ header {
 }
 
 .title-header {
-    width: 63%;
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 }
 
 .logout-header {
-    width: 35%;
-    display: flex;
-    justify-content: flex-end;
-    height: fit-content;
+    width: 60px;
+    position: absolute;
+    right: 15px;
 }
 
 .logout-header button {
     margin-top: 10px;
+    margin-right: 10px;
 }
